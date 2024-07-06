@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="tab_box">
+            <button class="tab_btn">Problema</button>
+            <button class="tab_btn ">Objetivo</button>
+            <button class="tab_btn">Custos</button>
+            <button class="tab_btn">Patrocínios</button>
+            <div class="line"></div>
+        </div>
+
+          <div class="content_box">
+            <div class="content ">
+                <h2>Problema</h2>
+                <p>
+                    De acordo com o site Tecnoblog, um estudo descobriu que os jovens ficam, em média, mais de quatro horas por dia acessando o smartphone e isso é muito prejudicial tanto para nossa saúde mental quanto para realizarmos atividades escolares e do cotidiano. entretanto, nossa equipe analisou esse problema e tivemos a ideia de desenvolver um quiz.
+                </p>
+            </div>
+        <div class="content_box">
+            <div class="content ">
+                <h2>Objetivo</h2>
+                <p>
+                    O site tem como objetivo auxiliar nossos usuários, formulando questões com finalidade
+                        de facilitar aos interessados a percepção de quais atividades offlines eles mais
+                        se identificam ou sentem vontade de experimentar, os ajudando a descobrir novas 
+                        formas de ocupação fora das telas.
+                </p>
+            </div>
+
+            <div class="content">
+                <h2>Custos</h2>
+                <p>
+                    Para esse projeto se tornar real seria necessário programador full-stack, por se tratar de um projeto que seria necessário mexer com banco de dados entre outros conhecimentos complexos. Levando em conta como essa mão de obra está escassa e se trata de uma profissional que tem custos um pouco alto, esse projeto poderia ter um preço um pouco elevado.
+                </p>
+            </div>
+
+            <div class="content">
+                <h2>Patrocínios</h2>
+                <p>
+                    Atualmente, existem empresas que possivelmente gostaria desse projeto e teriam interesse em investir, além de que o próprio governo poderia ajudar, já que se trata de algo que visa a melhorar e evolução da sociedade. Como citado anteriormente, empresas como, clínicas de psicologia, escolas privadas e as próprias clínicas que tratam esse vício em telas.
+
+                </p>
+            </div>
+        </div>
+    </div>  
+    <script>
+        const tabs= document.querySelectorAll('.tab_btn');
+        const all_content= document.querySelectorAll('.content');
+
+        tabs.forEach((tab, index)=>{
+            tab.addEventListener('click', (e)=>{
+                tabs.forEach(tab=>{tab.classList.remove('active')});
+                tab.classList.add('active');
+
+                var line=document.querySelector('.line')
+            line.style.width = e.target.offsetWidth + "px";
+            line.style.left = e.target.offsetLeft + "px";
+
+            all_content.forEach(content=>{content.classList.remove('active')});
+            all_content[index].classList.add('active');
+            })
+        })
+    </script>
+</body>
+</html>
